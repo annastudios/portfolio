@@ -31,16 +31,6 @@ img/            link-preview image
 resume.pdf      résumé
 ```
 
-## Run locally
-
-It's a static site, so any local server works:
-
-```bash
-python -m http.server 8000
-```
-
-Then open http://localhost:8000.
-
 ## Deployment
 
 Hosted on Vercel. Every push to `main` deploys automatically.
