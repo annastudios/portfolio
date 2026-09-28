@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab — Ankita Gaikwad</title>
+<meta name="description" content="Experiments, tinkering, and odd little interactive things — the space outside the serious portfolio.">
+<link rel="icon" href="favicon.png" type="image/png" sizes="256x256">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Lab — Ankita Gaikwad">
+<meta property="og:description" content="Experiments, tinkering, and odd little interactive things — the space outside the serious portfolio.">
+<meta property="og:image" content="img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Lab — Ankita Gaikwad">
+<meta name="twitter:description" content="Experiments, tinkering, and odd little interactive things — the space outside the serious portfolio.">
+<meta name="twitter:image" content="img/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,wght@0,500;1,500&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/lab.css">
+</head>
+<body class="lab-page">
+
+<div class="spotlight" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-group nav-left">
+      <a href="index.html#projects">Work</a>
+      <a href="lab.html" class="active">Lab</a>
+    </div>
+
+    <a href="index.html" class="nav-logo">ankita</a>
+
+    <div class="nav-group nav-right">
+      <a href="index.html#about">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav-links">
+    <a href="index.html#projects">Work</a>
+    <a href="lab.html" class="active">Lab</a>
+    <a href="index.html#about">About</a>
+    <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </nav>
+  <a class="mobile-nav-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ankita.gaikwad1607@gmail.com" target="_blank" rel="noopener" data-mailto="ankita.gaikwad1607@gmail.com">Get in touch</a>
+  <div class="mobile-nav-socials">
+    <a href="https://github.com/annastudios" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/ankita-gaikwad-598b63220/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div>
+
+<main class="lab-main">
+
+  <div class="bg-canvas-wrap">
+    <div class="bg-canvas-region" aria-hidden="true">
+      <div class="bg-canvas-view">
+        <canvas id="bgWave" class="bg-wave"></canvas>
+        <canvas id="bgNetwork" class="bg-network"></canvas>
+      </div>
+    </div>
+
+  <section class="lab-hero">
+    <p class="eyebrow reveal">The Lab</p>
+    <h1 class="lab-headline reveal">Things I <span class="accent-word-wrap"><span class="accent-word" id="accentWord">tinker</span></span> with.</h1>
+    <p class="lab-sub reveal">
+      Not every idea belongs on a resume. This is where the odd, playful, just-for-fun
+      experiments live, all in plain JavaScript and Canvas, with no libraries.
+    </p>
+  </section>
+
+  <div class="lab-picker reveal">
+    <span class="lab-picker-label" id="labPickerLabel">Experiment</span>
+    <div class="lab-dropdown" id="labDropdown">
+      <button type="button" class="lab-dropdown-btn" id="labDropdownBtn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="labPickerLabel labDropdownBtn">
+        <span class="lab-dropdown-value">flow-field.js</span>
+        <svg class="lab-dropdown-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="lab-dropdown-menu" role="listbox" aria-labelledby="labPickerLabel">
+        <li role="option" tabindex="-1" data-value="panel-flow" aria-selected="true">
+          <span class="lab-opt-name">flow-field.js</span>
+          <span class="lab-opt-desc">Noise-driven particle field</span>
+        </li>
+        <li role="option" tabindex="-1" data-value="panel-maze" aria-selected="false">
+          <span class="lab-opt-name">maze.js</span>
+          <span class="lab-opt-desc">Generate and solve a maze</span>
+        </li>
+        <li role="option" tabindex="-1" data-value="panel-sort" aria-selected="false">
+          <span class="lab-opt-name">sort-sonic.js</span>
+          <span class="lab-opt-desc">Hear sorting algorithms</span>
+        </li>
+        <li role="option" tabindex="-1" data-value="panel-bounce" aria-selected="false">
+          <span class="lab-opt-name">bounce.js</span>
+          <span class="lab-opt-desc">Click to drop bouncy balls</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="lab-experiments">
+  <section class="lab-experiment is-active reveal" id="panel-flow">
+    <div class="lab-window">
+      <div class="terminal-bar">
+        <span class="term-dot red"></span>
+        <span class="term-dot yellow"></span>
+        <span class="term-dot green"></span>
+        <span class="terminal-title">flow-field.js</span>
+      </div>
+      <div class="lab-stage" id="flowStage">
+        <canvas id="flowCanvas"></canvas>
+        <div class="lab-panel" id="flowPanel">
+          <button type="button" class="lab-panel-head" id="flowPanelToggle" aria-expanded="true" aria-controls="flowPanelBody">
+            <span>Controls</span>
+            <span id="flowToggleIcon" aria-hidden="true">−</span>
+          </button>
+          <div class="lab-panel-body" id="flowPanelBody">
+            <div class="lab-row">
+              <label for="flow-noiseScale">Noise scale <span class="lab-val" id="flow-v-noiseScale"></span></label>
+              <input type="range" id="flow-noiseScale" min="0.0005" max="0.01" step="0.0005">
+            </div>
+            <div class="lab-row">
+              <label for="flow-particleCount">Particle count <span class="lab-val" id="flow-v-particleCount"></span></label>
+              <input type="range" id="flow-particleCount" min="100" max="4000" step="100">
+            </div>
+            <div class="lab-row">
+              <label for="flow-speed">Speed <span class="lab-val" id="flow-v-speed"></span></label>
+              <input type="range" id="flow-speed" min="0.2" max="6" step="0.1">
+            </div>
+            <div class="lab-row">
+              <label for="flow-lineAlpha">Line opacity <span class="lab-val" id="flow-v-lineAlpha"></span></label>
+              <input type="range" id="flow-lineAlpha" min="0.01" max="0.3" step="0.005">
+            </div>
+            <div class="lab-row">
+              <label for="flow-lineWidth">Line thickness <span class="lab-val" id="flow-v-lineWidth"></span></label>
+              <input type="range" id="flow-lineWidth" min="0.5" max="4" step="0.1">
+            </div>
+            <div class="lab-row lab-checkbox-row">
+              <label><input type="checkbox" id="flow-showField"> Show wind field</label>
+            </div>
+            <div class="lab-row">
+              <label for="flow-colorMode">Color mode</label>
+              <select id="flow-colorMode">
+                <option value="single">Single color</option>
+                <option value="position" selected>Gradient by position</option>
+                <option value="angle">Gradient by angle</option>
+                <option value="random">Random per particle</option>
+              </select>
+            </div>
+            <div class="lab-row">
+              <label for="flow-baseHue">Base hue <span class="lab-val" id="flow-v-baseHue"></span></label>
+              <input type="range" id="flow-baseHue" min="0" max="360" step="1">
+            </div>
+            <div class="lab-btn-row">
+              <button id="flow-btn-run">Start</button>
+              <button id="flow-btn-clear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="lab-caption">Thousands of particles following an invisible wind map, built on simplex noise I wrote by hand. Press Start to set them moving.</p>
+  </section>
+
+  <section class="lab-experiment reveal" id="panel-maze">
+    <div class="lab-window">
+      <div class="terminal-bar">
+        <span class="term-dot red"></span>
+        <span class="term-dot yellow"></span>
+        <span class="term-dot green"></span>
+        <span class="terminal-title">maze.js</span>
+      </div>
+      <div class="lab-stage" id="mazeStage">
+        <canvas id="mazeCanvas"></canvas>
+        <div class="lab-panel" id="mazePanel">
+          <button type="button" class="lab-panel-head" id="mazePanelToggle" aria-expanded="true" aria-controls="mazePanelBody">
+            <span>Controls</span>
+            <span id="mazeToggleIcon" aria-hidden="true">−</span>
+          </button>
+          <div class="lab-panel-body" id="mazePanelBody">
+            <div class="lab-row">
+              <label for="maze-cols">Columns <span class="lab-val" id="maze-v-cols"></span></label>
+              <input type="range" id="maze-cols" min="8" max="40" step="1">
+            </div>
+            <div class="lab-row">
+              <label for="maze-speed">Speed <span class="lab-val" id="maze-v-speed"></span></label>
+              <input type="range" id="maze-speed" min="1" max="20" step="1">
+            </div>
+            <div class="lab-row">
+              <label for="maze-algorithm">Solve algorithm</label>
+              <select id="maze-algorithm">
+                <option value="bfs" selected>BFS (shortest path)</option>
+                <option value="dfs">DFS</option>
+              </select>
+            </div>
+            <div class="lab-row lab-checkbox-row">
+              <label><input type="checkbox" id="maze-instant"> Instant (skip animation)</label>
+            </div>
+            <div class="lab-btn-row">
+              <button id="maze-btn-run">Start</button>
+            </div>
+            <div class="lab-btn-row">
+              <button id="maze-btn-new">New maze</button>
+              <button id="maze-btn-solve">Solve</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="lab-caption">A maze carved with a recursive backtracker, then solved live — green is the start, red the exit. Press Start to watch it run.</p>
+  </section>
+
+  <section class="lab-experiment reveal" id="panel-sort">
+    <div class="lab-window">
+      <div class="terminal-bar">
+        <span class="term-dot red"></span>
+        <span class="term-dot yellow"></span>
+        <span class="term-dot green"></span>
+        <span class="terminal-title">sort-sonic.js</span>
+      </div>
+      <div class="lab-stage" id="sortStage">
+        <canvas id="sortCanvas"></canvas>
+        <div class="lab-panel" id="sortPanel">
+          <button type="button" class="lab-panel-head" id="sortPanelToggle" aria-expanded="true" aria-controls="sortPanelBody">
+            <span>Controls</span>
+            <span id="sortToggleIcon" aria-hidden="true">−</span>
+          </button>
+          <div class="lab-panel-body" id="sortPanelBody">
+            <div class="lab-row">
+              <div class="lab-readout">Comparisons <span class="lab-val" id="sort-v-compares">0</span></div>
+              <div class="lab-readout">Swaps <span class="lab-val" id="sort-v-swaps">0</span></div>
+            </div>
+            <div class="lab-row">
+              <label for="sort-algorithm">Algorithm</label>
+              <select id="sort-algorithm">
+                <option value="bubble">Bubble sort</option>
+                <option value="insertion">Insertion sort</option>
+                <option value="quick" selected>Quick sort</option>
+                <option value="merge">Merge sort</option>
+                <option value="heap">Heap sort</option>
+              </select>
+            </div>
+            <div class="lab-row">
+              <label for="sort-size">Bars <span class="lab-val" id="sort-v-size"></span></label>
+              <input type="range" id="sort-size" min="10" max="120" step="2">
+            </div>
+            <div class="lab-row">
+              <label for="sort-speed">Speed <span class="lab-val" id="sort-v-speed"></span></label>
+              <input type="range" id="sort-speed" min="5" max="400" step="5">
+            </div>
+            <div class="lab-row lab-checkbox-row">
+              <label><input type="checkbox" id="sort-sound" checked> Sound</label>
+            </div>
+            <div class="lab-btn-row">
+              <button id="sort-btn-run">Start</button>
+              <button id="sort-btn-shuffle">Shuffle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="lab-caption">The browser version of my <a href="https://github.com/annastudios/Algo-Sonic" target="_blank" rel="noopener">Algo-Sonic</a>, with sound from the Web Audio API. Turn your sound on, pick an algorithm and press Start: bubble sort sounds busy, merge sort sounds rhythmic.</p>
+  </section>
+
+  <section class="lab-experiment reveal" id="panel-bounce">
+    <div class="lab-window">
+      <div class="terminal-bar">
+        <span class="term-dot red"></span>
+        <span class="term-dot yellow"></span>
+        <span class="term-dot green"></span>
+        <span class="terminal-title">bounce.js</span>
+      </div>
+      <div class="lab-stage" id="bounceStage">
+        <canvas id="bounceCanvas"></canvas>
+        <div class="lab-panel" id="bouncePanel">
+          <button type="button" class="lab-panel-head" id="bouncePanelToggle" aria-expanded="true" aria-controls="bouncePanelBody">
+            <span>Controls</span>
+            <span id="bounceToggleIcon" aria-hidden="true">−</span>
+          </button>
+          <div class="lab-panel-body" id="bouncePanelBody">
+            <div class="lab-row">
+              <div class="lab-readout">Balls <span class="lab-val" id="bounce-v-count">0</span></div>
+            </div>
+            <div class="lab-row">
+              <label for="bounce-gravity">Gravity <span class="lab-val" id="bounce-v-gravity"></span></label>
+              <input type="range" id="bounce-gravity" min="0" max="1" step="0.05">
+            </div>
+            <div class="lab-row">
+              <label for="bounce-bounciness">Bounciness <span class="lab-val" id="bounce-v-bounciness"></span></label>
+              <input type="range" id="bounce-bounciness" min="0.3" max="0.95" step="0.05">
+            </div>
+            <div class="lab-btn-row">
+              <button id="bounce-btn-rain">Rain</button>
+              <button id="bounce-btn-shake">Shake</button>
+            </div>
+            <div class="lab-btn-row">
+              <button id="bounce-btn-clear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="lab-caption">Click or tap anywhere to drop a ball — they fall, bounce and bump into each other. Try Rain, then Shake.</p>
+  </section>
+  </div>
+
+  <p class="lab-outro reveal">Want to talk about any of these? <a href="index.html#contact">Say hello →</a></p>
+
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> Ankita Gaikwad</span>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/lab-effects.js"></script>
+<script src="js/flow-field.js"></script>
+<script src="js/maze.js"></script>
+<script src="js/sort-sonic.js"></script>
+<script src="js/bounce.js"></script>
+<script src="js/network-bg.js"></script>
+</body>
+</html>

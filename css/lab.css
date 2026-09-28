@@ -1,0 +1,403 @@
+/* Lab page — hero */
+.lab-main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+.lab-hero {
+  padding: 44px 0 20px;
+  text-align: center;
+}
+
+.lab-headline {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(32px, 5vw, 52px);
+  margin: 10px 0;
+}
+
+.lab-sub {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+}
+
+.terminal {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #161e2f;
+  box-shadow: 0 24px 60px -24px rgba(20, 18, 15, 0.45);
+  font-family: 'Space Mono', monospace;
+  text-align: left;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #0d1220;
+}
+
+.term-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.term-dot.red { background: #ff5f57; }
+.term-dot.yellow { background: #febc2e; }
+.term-dot.green { background: #28c840; }
+
+.terminal-title {
+  margin-left: 8px;
+  color: rgba(247, 237, 232, 0.45);
+  font-size: 12px;
+}
+
+.terminal-body {
+  padding: 18px 16px;
+  height: 360px;
+  overflow-y: auto;
+  color: #e8f0ee;
+  font-size: 13px;
+  line-height: 1.7;
+  cursor: text;
+}
+
+.term-line { margin: 0 0 8px; color: #e8f0ee; white-space: pre-wrap; word-break: break-word; }
+.term-echo { color: #8ecae6; }
+.term-cmd { color: #ffa586; font-weight: 700; }
+.term-error { color: #ff8a80; }
+.term-muted { color: rgba(232, 240, 238, 0.5); }
+
+.term-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 16px 12px;
+}
+
+.term-chip {
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 165, 134, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: #ffa586;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.term-chip:hover,
+.term-chip:focus-visible { background: rgba(255, 165, 134, 0.12); border-color: #ffa586; outline: none; }
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid rgba(247, 237, 232, 0.08);
+}
+
+.term-prompt { color: #ffa586; font-size: 13px; white-space: nowrap; }
+
+.terminal-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f7ede8;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+}
+
+/* experiment picker — only one lab window is shown at a time. The panels
+   are stacked in one grid cell and the inactive ones are hidden with
+   visibility (not display:none) so their canvases keep a real size. */
+.lab-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lab-picker-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* raised above the experiment panels below it so the open menu isn't covered
+   (each .reveal sibling is its own stacking context) */
+.lab-picker { position: relative; z-index: 20; }
+
+.lab-dropdown { position: relative; }
+
+.lab-dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  padding: 5px 10px 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 28px -14px rgba(20, 18, 15, 0.35);
+  color: var(--fg);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.lab-dropdown-btn:hover,
+.lab-dropdown-btn:focus-visible,
+.lab-dropdown.is-open .lab-dropdown-btn {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.85);
+  outline: none;
+}
+
+.lab-dropdown-chevron {
+  width: 10px;
+  height: 10px;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+}
+
+.lab-dropdown.is-open .lab-dropdown-chevron { transform: rotate(180deg); }
+
+.lab-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  min-width: 170px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 24px 50px -20px rgba(20, 18, 15, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -6px);
+  /* hide only after the fade-out finishes */
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+}
+
+/* on open, become visible immediately so the first option can take focus */
+.lab-dropdown.is-open .lab-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s;
+}
+
+.lab-dropdown-menu li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 28px 6px 10px;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.15s ease;
+}
+
+.lab-dropdown-menu li:hover,
+.lab-dropdown-menu li:focus-visible { background: var(--accent-soft); }
+
+.lab-opt-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.lab-opt-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.lab-dropdown-menu li[aria-selected="true"]::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 7px;
+  height: 4px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-70%) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-dropdown-menu, .lab-dropdown-chevron { transition: none; }
+}
+
+.lab-experiments { display: grid; padding-bottom: 40px; }
+
+.lab-outro {
+  padding-bottom: 100px; /* room above the footer */
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.lab-outro a { color: var(--accent); font-weight: 600; }
+
+.lab-experiments > .lab-experiment { grid-area: 1 / 1; }
+
+.lab-experiments > .lab-experiment:not(.is-active) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* shared "lab window" shell — same chrome as the terminal, reused by every canvas experiment */
+.lab-experiment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 70px;
+}
+
+.lab-window {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0a0a0a;
+  box-shadow: 0 24px 60px -24px rgba(20, 18, 15, 0.45);
+}
+
+.lab-stage {
+  position: relative;
+  width: 100%;
+  /* grows with the screen, but never so short that the controls get cramped */
+  height: clamp(460px, calc(100vh - 330px), 620px);
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.lab-stage canvas { display: block; width: 100%; height: 100%; }
+
+.lab-panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  width: 190px;
+  padding: 12px;
+  background: rgba(20, 20, 24, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #eee;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-panel.collapsed { bottom: auto; }
+.lab-panel.collapsed .lab-panel-body { display: none; }
+
+.lab-panel-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  padding-right: 4px; /* keeps values clear of the scrollbar */
+  /* thin, dark scrollbar instead of the browser's default white one */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+.lab-panel-body::-webkit-scrollbar { width: 6px; }
+.lab-panel-body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.25); border-radius: 3px; }
+.lab-panel-body::-webkit-scrollbar-track { background: transparent; }
+
+.lab-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 12px;
+  margin-bottom: 10px;
+  /* it's a <button> for keyboard access — strip the default button look */
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+}
+.lab-panel-head:focus-visible { outline: 2px solid #ffa586; outline-offset: 3px; border-radius: 4px; }
+
+.lab-row { margin-bottom: 10px; }
+.lab-row label { display: flex; justify-content: space-between; color: #aaa; margin-bottom: 4px; }
+.lab-row input[type="range"] { width: 100%; }
+
+.lab-checkbox-row label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.lab-checkbox-row input[type="checkbox"] { width: auto; margin: 0; }
+
+.lab-row select {
+  width: 100%;
+  padding: 5px;
+  background: #222;
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.lab-val { color: #eee; font-variant-numeric: tabular-nums; }
+.lab-readout { display: flex; justify-content: space-between; color: #aaa; margin-bottom: 4px; }
+#bounceCanvas { cursor: pointer; }
+.lab-caption a { color: var(--accent); text-decoration: underline; }
+
+.lab-btn-row { display: flex; gap: 6px; margin-top: 2px; margin-bottom: 8px; }
+.lab-btn-row button {
+  flex: 1;
+  padding: 7px 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+}
+.lab-btn-row button:hover { background: rgba(255, 255, 255, 0.16); }
+
+.lab-caption {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  max-width: 560px;
+  text-wrap: balance;
+}
+
+@media (max-width: 700px) {
+  .terminal-body { height: 260px; }
+  .lab-stage { height: 320px; }
+  .lab-panel { width: 150px; font-size: 10px; padding: 10px; }
+}

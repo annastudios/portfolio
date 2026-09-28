@@ -1,0 +1,12 @@
+# editor / tool settings
+.vscode/
+.claude/
+.idea/
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# resume source stays private; only the PDF is published
+*.tex

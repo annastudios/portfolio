@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankita Gaikwad — Software Engineer</title>
+<meta name="description" content="Software engineer in Pune, India. Two years of production APIs on serverless AWS for healthcare, plus full-stack apps and RAG pipelines.">
+<link rel="icon" href="favicon.png" type="image/png" sizes="256x256">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ankita Gaikwad — Software Engineer">
+<meta property="og:description" content="Backend and cloud first, curious across the stack. Open to SDE roles and freelance work.">
+<meta property="og:image" content="img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ankita Gaikwad — Software Engineer">
+<meta name="twitter:description" content="Backend and cloud first, curious across the stack. Open to SDE roles and freelance work.">
+<meta name="twitter:image" content="img/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,wght@0,500;1,500&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+
+<div class="spotlight" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-group nav-left">
+      <a href="index.html#projects">Work</a>
+      <a href="lab.html">Lab</a>
+    </div>
+
+    <a href="index.html" class="nav-logo">ankita</a>
+
+    <div class="nav-group nav-right">
+      <a href="index.html#about">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav-links">
+    <a href="index.html#projects">Work</a>
+    <a href="lab.html">Lab</a>
+    <a href="index.html#about">About</a>
+    <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </nav>
+  <a class="mobile-nav-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ankita.gaikwad1607@gmail.com" target="_blank" rel="noopener" data-mailto="ankita.gaikwad1607@gmail.com">Get in touch</a>
+  <div class="mobile-nav-socials">
+    <a href="https://github.com/annastudios" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/ankita-gaikwad-598b63220/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div>
+
+<main>
+
+  <div class="bg-canvas-wrap">
+    <div class="bg-canvas-region" aria-hidden="true">
+      <div class="bg-canvas-view">
+        <canvas id="bgWave" class="bg-wave"></canvas>
+        <canvas id="bgNetwork" class="bg-network"></canvas>
+      </div>
+    </div>
+
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="eyebrow reveal">Ankita Gaikwad · Pune, India</p>
+        <h1 class="headline reveal">
+          Software engineer.<br>
+          <span class="accent-word-wrap"><span class="accent-word" id="accentWord">Curious</span></span> across the&nbsp;stack.
+        </h1>
+        <p class="hero-sub reveal">Backend and cloud are where I've done my best work: two years of production APIs on AWS for healthcare. Full-stack apps and RAG pipelines are where curiosity took me next.</p>
+        <div class="tech-pills reveal">
+          <span class="pill">REST APIs</span>
+          <span class="pill">Serverless AWS</span>
+          <span class="pill">Full-Stack</span>
+          <span class="pill">RAG Pipelines</span>
+          <span class="pill">Healthcare Tech</span>
+        </div>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary magnetic">View projects</a>
+          <a href="#contact" class="btn btn-ghost magnetic">Say hello</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="term-dot red"></span>
+            <span class="term-dot yellow"></span>
+            <span class="term-dot green"></span>
+            <span class="terminal-title">ankita@portfolio: ~</span>
+          </div>
+          <div class="terminal-body" id="terminalBody" tabindex="-1">
+            <p class="term-line">Welcome. Type <span class="term-cmd">help</span> to see what this does, or <span class="term-cmd">joke</span> if you need a break.</p>
+          </div>
+          <div class="term-chips" aria-label="Quick commands">
+            <button type="button" class="term-chip" data-cmd="whoami">whoami</button>
+            <button type="button" class="term-chip" data-cmd="projects">projects</button>
+            <button type="button" class="term-chip" data-cmd="experience">experience</button>
+            <button type="button" class="term-chip" data-cmd="resume">resume</button>
+            <button type="button" class="term-chip" data-cmd="joke">joke</button>
+          </div>
+          <div class="terminal-input-row">
+            <span class="term-prompt">ankita@portfolio:~$</span>
+            <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command input">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span>Scroll</span>
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <section class="about" id="about">
+    <p class="eyebrow reveal">About</p>
+    <h2 class="reveal">A little about me</h2>
+    <p class="about-lead reveal">I like finding out <span class="accent-word">why things break</span>, then turning the fix into something nobody has to think about again.</p>
+    <div class="about-columns">
+      <div class="about-col-main bento-tile reveal">
+        <p class="about-text">
+          At Accenture, I worked on the backend of a healthcare platform, and a lot of that time
+          went into failures: tracing where transactions broke, then automating the recovery so the team
+          didn't have to do it by hand.
+        </p>
+        <p class="about-text">
+          Outside work, I pick up whatever I want to understand properly. That's how I ended up building a
+          RAG app that cites its sources, and a full-stack journaling app from login to database.
+        </p>
+        <p class="about-text">
+          Right now I'm looking for a full-time SDE role. I'm also open to freelance projects and
+          collaborations, so if you have something that needs building, say hello.
+        </p>
+      </div>
+      <div class="about-col-facts reveal">
+        <div class="fact-card bento-tile">
+          <div class="fact-row">
+            <span class="fact-label">Certified</span>
+            <p class="fact-value">Azure AI Fundamentals (AI-900)</p>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label">Focus</span>
+            <p class="fact-value">Backend · cloud · full-stack · RAG</p>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label">Experience</span>
+            <p class="fact-value">2+ years in production</p>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label">Status</span>
+            <p class="fact-value">Open to SDE roles &amp; freelance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <p class="eyebrow reveal">Experience</p>
+    <h2 class="reveal">Where I've worked &amp; studied</h2>
+    <div class="timeline">
+      <div class="timeline-item timeline-work reveal">
+        <span class="timeline-marker"></span>
+        <div class="timeline-meta">
+          <span class="timeline-type">Work</span>
+          <span class="timeline-date">Jun 2024 — Jul 2026</span>
+        </div>
+        <div class="bento-tile timeline-card">
+          <h3>Associate Software Engineer — Accenture</h3>
+          <p class="timeline-context">Backend engineer on a healthcare enrollment platform: serverless AWS, Python, REST APIs.</p>
+          <div class="stat-row">
+            <div class="stat"><span class="stat-num">200K+</span><span class="stat-label">Enrollments recovered</span></div>
+            <div class="stat"><span class="stat-num">60%</span><span class="stat-label">Less manual reprocessing</span></div>
+            <div class="stat"><span class="stat-num">Days → min</span><span class="stat-label">Failure detection</span></div>
+          </div>
+          <ul class="timeline-list">
+            <li>Designed and built a Python system that detects failed healthcare-enrollment transactions and retries them automatically, recovering <strong>200,000+</strong> of them and cutting manual reprocessing by <strong>60%</strong>.</li>
+            <li>Shipped <strong>23</strong> REST API endpoints on AWS Lambda + API Gateway, handling up to <strong>15K</strong> requests a day.</li>
+            <li>Traced repeated failures to Lambda throttling and added CloudWatch alarms on every endpoint, so failures surface in minutes instead of after days of cross-team escalation.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item timeline-education reveal">
+        <span class="timeline-marker timeline-marker-outline"></span>
+        <div class="timeline-meta">
+          <span class="timeline-type">Education</span>
+          <span class="timeline-date">2020 — 2024</span>
+        </div>
+        <div class="bento-tile timeline-card timeline-card-edu">
+          <h3 class="timeline-edu-heading">B.E., Computer Engineering — PCCOER, Pune</h3>
+          <p>CGPA 8.5 / 10</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <p class="eyebrow reveal">Projects</p>
+    <h2 class="reveal">Things I've built</h2>
+
+    <!-- bento: the numbers are the visuals -->
+    <div class="bento-projects">
+      <article class="bento-project bp-featured reveal">
+        <span class="bp-tag">Featured · RAG · AI</span>
+        <div class="bp-metric">
+          <span class="bp-metric-num">5 min → 10 s</span>
+          <span class="bp-metric-label">query time</span>
+        </div>
+        <div class="bp-body">
+          <h3>Askive — Chat with your documents</h3>
+          <p>Upload a PDF, DOCX or TXT file and ask it questions. Every answer cites the exact passages it came from. Built solo in 3 weeks.</p>
+          <dl class="bp-story">
+            <div><dt>Goal</dt><dd>Chat with your own documents, and be able to trust the answers.</dd></div>
+            <div><dt>Built</dt><dd>FastAPI + ChromaDB retrieval. Gemini answers only from the retrieved passages.</dd></div>
+            <div><dt>Hurdle</dt><dd>Queries took 5+ minutes, and uploads kept hitting embedding rate limits.</dd></div>
+            <div><dt>Fix</dt><dd>Moved the blocking LLM call off FastAPI's event loop: under 10 s per query. Batched all embeddings into one request: no more rate-limit failures.</dd></div>
+          </dl>
+          <p class="bp-tech">Python · FastAPI · ChromaDB · Voyage AI · Gemini</p>
+          <a class="bp-link" href="https://github.com/annastudios/askive" target="_blank" rel="noopener">View code</a>
+        </div>
+      </article>
+
+      <article class="bento-project bp-lantern reveal">
+        <span class="bp-tag">Full-Stack</span>
+        <div class="bp-body">
+          <h3>Lantern — Journaling App</h3>
+          <p>A private journal with magic-link sign-in, rich-text entries, images, tags, favorites, search and a calendar view. Row Level Security keeps each user's entries locked to them at the database level.</p>
+          <p class="bp-tech">Next.js · TypeScript · Supabase · PostgreSQL</p>
+          <a class="bp-link" href="https://github.com/annastudios/lantern-journal" target="_blank" rel="noopener">View code</a>
+        </div>
+      </article>
+
+      <article class="bento-project bp-sonic reveal">
+        <span class="bp-tag">Creative Coding</span>
+        <div class="bp-body">
+          <h3>Algo-Sonic</h3>
+          <p>A sorting visualizer where every compare and swap plays a note, so you can hear O(n²) against O(n log n). Each algorithm is a Python generator, kept separate from the drawing and sound code.</p>
+          <p class="bp-tech">Python · Pygame · NumPy</p>
+          <div class="bp-links">
+            <a class="bp-link" href="https://github.com/annastudios/Algo-Sonic" target="_blank" rel="noopener">View code</a>
+            <a class="bp-link" href="lab.html#sort-sonic">Play it in the Lab</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="bento-project bp-stat reveal">
+        <span class="bp-stat-num">8</span>
+        <span class="bp-stat-label">algorithms you can hear: 6 sorts, 2 searches</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <p class="eyebrow reveal">Skills</p>
+    <h2 class="reveal">What I work with</h2>
+
+    <div class="core-stack reveal">
+      <span class="core-stack-label">Core stack</span>
+      <div class="core-stack-row">
+        <span class="pill-core">Python</span>
+        <span class="pill-core">REST APIs</span>
+        <span class="pill-core">FastAPI</span>
+        <span class="pill-core">AWS Lambda</span>
+        <span class="pill-core">PostgreSQL</span>
+        <span class="pill-core">TypeScript</span>
+        <span class="pill-core">React / Next.js</span>
+        <span class="pill-core">RAG</span>
+      </div>
+    </div>
+
+    <hr class="skills-divider reveal">
+
+    <div class="bento-grid">
+      <div class="bento-tile span-3 skill-navy reveal">
+        <h3 class="skills-group-title">Backend &amp; APIs</h3>
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">Express.js</span>
+          <span class="pill">Java</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Postman</span>
+        </div>
+      </div>
+      <div class="bento-tile span-3 skill-blue reveal">
+        <h3 class="skills-group-title">Cloud &amp; DevOps</h3>
+        <div class="pill-row">
+          <span class="pill">AWS Lambda</span>
+          <span class="pill">API Gateway</span>
+          <span class="pill">CloudFormation</span>
+          <span class="pill">CloudWatch</span>
+          <span class="pill">CodePipeline</span>
+          <span class="pill">Microsoft Azure (AI-900)</span>
+          <span class="pill">Docker</span>
+          <span class="pill">Kubernetes</span>
+          <span class="pill">CI/CD</span>
+          <span class="pill">Infrastructure as Code</span>
+          <span class="pill">Git / GitHub</span>
+          <span class="pill">Agile/Scrum</span>
+        </div>
+      </div>
+      <div class="bento-tile span-3 skill-purple reveal">
+        <h3 class="skills-group-title">Frontend</h3>
+        <div class="pill-row">
+          <span class="pill">TypeScript</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">React</span>
+          <span class="pill">Next.js</span>
+          <span class="pill">Tailwind CSS</span>
+          <span class="pill">HTML5 / CSS3</span>
+        </div>
+      </div>
+      <div class="bento-tile span-3 skill-red reveal">
+        <h3 class="skills-group-title">AI &amp; Data</h3>
+        <div class="pill-row">
+          <span class="pill">RAG Pipelines</span>
+          <span class="pill">Vector Search</span>
+          <span class="pill">Semantic Chunking</span>
+          <span class="pill">Embeddings (Voyage AI)</span>
+          <span class="pill">Gemini API</span>
+          <span class="pill">HuggingFace Transformers</span>
+          <span class="pill">TensorFlow</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">Supabase</span>
+          <span class="pill">ChromaDB</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="contact-blob contact-blob-purple" aria-hidden="true"></div>
+    <div class="contact-blob contact-blob-red" aria-hidden="true"></div>
+    <div class="contact-blob contact-blob-peach" aria-hidden="true"></div>
+
+    <div class="contact-deco" aria-hidden="true">
+      <svg class="contact-network" viewBox="0 0 1100 600" preserveAspectRatio="xMidYMid meet" fill="none">
+        <g stroke-width="1" stroke-opacity="0.33">
+          <line x1="140" y1="110" x2="230" y2="200" stroke="#8b4fe1"/>
+          <line x1="230" y1="200" x2="300" y2="90" stroke="#3a63c9"/>
+          <line x1="880" y1="120" x2="960" y2="230" stroke="#b51a2b"/>
+        </g>
+        <circle cx="140" cy="110" r="2" fill="#8b4fe1"/>
+        <circle cx="230" cy="200" r="1.8" fill="#3a63c9"/>
+        <circle cx="300" cy="90" r="1.6" fill="#ffa586"/>
+        <circle cx="880" cy="120" r="2" fill="#b51a2b"/>
+        <circle cx="960" cy="230" r="1.8" fill="#ffa586"/>
+        <circle cx="1010" cy="90" r="1.6" fill="#8b4fe1"/>
+        <circle cx="400" cy="500" r="1.8" fill="#3a63c9"/>
+        <circle cx="760" cy="520" r="1.6" fill="#ffa586"/>
+      </svg>
+
+      <svg class="contact-doodle contact-doodle-arrow" viewBox="0 0 130 90" width="130" height="90" fill="none" stroke="#ffa586" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 72 C 20 30, 40 84, 62 46 S 96 10, 118 30"/>
+        <path d="M104 18 L119 30 L103 37"/>
+      </svg>
+      <span class="contact-doodle-label" id="puneTime">Pune, India</span>
+
+      <svg class="contact-doodle contact-doodle-sparkle" viewBox="0 0 70 70" width="70" height="70" fill="none" stroke="#8b4fe1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M35 4 C 37 24, 46 33, 66 35 C 46 37, 37 46, 35 66 C 33 46, 24 37, 4 35 C 24 33, 33 24, 35 4 Z"/>
+      </svg>
+
+      <svg class="contact-doodle contact-doodle-arrow-2" viewBox="0 0 90 40" width="90" height="40" fill="none" stroke="#3a63c9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 30 C 18 6, 34 36, 50 16 S 72 8, 84 18"/>
+        <path d="M74 9 L85 18 L72 26"/>
+      </svg>
+    </div>
+
+    <div class="section-inner">
+      <div class="reveal"><p class="contact-note">see you soon</p></div>
+      <p class="eyebrow reveal">Contact</p>
+      <h2 class="reveal contact-headline">Hiring, or need something<br><span class="contact-accent">built</span>?</h2>
+      <p class="reveal contact-sub">Full-time role, freelance project, or a question about something I've built. My inbox is open.</p>
+      <div class="contact-actions reveal">
+        <a class="contact-btn contact-btn-primary magnetic" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ankita.gaikwad1607@gmail.com" target="_blank" rel="noopener" data-mailto="ankita.gaikwad1607@gmail.com">Email me</a>
+        <a class="contact-btn contact-btn-ghost magnetic" href="resume.pdf" target="_blank" rel="noopener">View résumé</a>
+      </div>
+      <div class="contact-socials reveal">
+        <a href="https://github.com/annastudios" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ankita-gaikwad-598b63220/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="contact-footnote">I reply to every message. Unread badges stress me out</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer dark-footer">
+  <div class="section-inner">
+    <span>© <span id="year"></span> Ankita Gaikwad</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/network-bg.js"></script>
+</body>
+</html>
