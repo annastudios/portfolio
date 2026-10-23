@@ -184,14 +184,14 @@
         </div>
         <div class="bento-tile timeline-card">
           <h3>Associate Software Engineer — Accenture</h3>
-          <p class="timeline-context">Backend engineer on a healthcare enrollment platform: serverless AWS, Python, REST APIs.</p>
+          <p class="timeline-context">Backend engineer building serverless microservices that link a vendor system to a Salesforce healthcare CRM: AWS Lambda, Python, Node.js, REST APIs.</p>
           <div class="stat-row">
-            <div class="stat"><span class="stat-num">200K+</span><span class="stat-label">Enrollments recovered</span></div>
+            <div class="stat"><span class="stat-num">200K+</span><span class="stat-label">Transactions recovered</span></div>
             <div class="stat"><span class="stat-num">60%</span><span class="stat-label">Less manual reprocessing</span></div>
             <div class="stat"><span class="stat-num">Days → min</span><span class="stat-label">Failure detection</span></div>
           </div>
           <ul class="timeline-list">
-            <li>Designed and built a Python system that detects failed healthcare-enrollment transactions and retries them automatically, recovering <strong>200,000+</strong> of them and cutting manual reprocessing by <strong>60%</strong>.</li>
+            <li>Architected an automated, idempotent failure-detection and retry system in Python that recovered <strong>200,000+</strong> failed benefit-verification transactions and cut manual reprocessing by <strong>60%</strong>.</li>
             <li>Shipped <strong>23</strong> REST API endpoints on AWS Lambda + API Gateway, handling up to <strong>15K</strong> requests a day.</li>
             <li>Traced repeated failures to Lambda throttling and added CloudWatch alarms on every endpoint, so failures surface in minutes instead of after days of cross-team escalation.</li>
           </ul>
@@ -225,14 +225,14 @@
         </div>
         <div class="bp-body">
           <h3>Askive — Chat with your documents</h3>
-          <p>Upload a PDF, DOCX or TXT file and ask it questions. Every answer cites the exact passages it came from. Built solo in 3 weeks.</p>
+          <p>Upload a PDF, DOCX or TXT file and ask it questions. Every answer cites the exact passages it came from. Version 2 adds accounts, hybrid search, caching and a Kubernetes deployment, load-tested with Locust.</p>
           <dl class="bp-story">
             <div><dt>Goal</dt><dd>Chat with your own documents, and be able to trust the answers.</dd></div>
-            <div><dt>Built</dt><dd>FastAPI + ChromaDB retrieval. Gemini answers only from the retrieved passages.</dd></div>
-            <div><dt>Hurdle</dt><dd>Queries took 5+ minutes, and uploads kept hitting embedding rate limits.</dd></div>
-            <div><dt>Fix</dt><dd>Moved the blocking LLM call off FastAPI's event loop: under 10 s per query. Batched all embeddings into one request: no more rate-limit failures.</dd></div>
+            <div><dt>Built</dt><dd>Hybrid search (embeddings + BM25, merged with Reciprocal Rank Fusion) over ChromaDB; Gemini answers only from the retrieved passages. JWT accounts, Redis caching, Postgres, Docker and Kubernetes with autoscaling.</dd></div>
+            <div><dt>Hurdle</dt><dd>Queries took 5+ minutes, uploads hit embedding rate limits, and a load test showed one pod failing 11.7% of requests at 100 users.</dd></div>
+            <div><dt>Fix</dt><dd>Moved the blocking LLM call off FastAPI's event loop (under 10 s per query) and batched embeddings. Fixed three bottlenecks the load test found; autoscaled to 3 pods: 0.1% errors at 100 users.</dd></div>
           </dl>
-          <p class="bp-tech">Python · FastAPI · ChromaDB · Voyage AI · Gemini</p>
+          <p class="bp-tech">Python · FastAPI · ChromaDB · Voyage AI · Gemini · Redis · Postgres · Docker · Kubernetes</p>
           <a class="bp-link" href="https://github.com/annastudios/askive" target="_blank" rel="noopener">View code</a>
         </div>
       </article>
@@ -264,6 +264,28 @@
         <span class="bp-stat-num">8</span>
         <span class="bp-stat-label">algorithms you can hear: 6 sorts, 2 searches</span>
       </div>
+
+      <article class="bento-project bp-settlement reveal">
+        <span class="bp-tag">Backend · Fintech</span>
+        <div class="bp-split">
+          <div class="bp-metric">
+            <span class="bp-metric-num">0</span>
+            <span class="bp-metric-label">payments lost or paid twice, through worker crashes, network outages and lost replies</span>
+          </div>
+          <div class="bp-body">
+            <h3>Settlement Engine — A payment engine that never pays twice</h3>
+            <p>A bank-style engine that sends payments to simulated Faster Payments and SEPA networks, and keeps going when things break. A live dashboard plays a 90-second chaos demo on the real system.</p>
+            <dl class="bp-story">
+              <div><dt>Goal</dt><dd>Never lose a payment, never pay one twice, and prove it.</dd></div>
+              <div><dt>Built</dt><dd>FastAPI + PostgreSQL as the source of truth, a Redis queue with atomic Lua claims and leases, and payments idempotent on the ISO 20022 UETR.</dd></div>
+              <div><dt>Hurdle</dt><dd>A reply can get lost after the money has already moved, so a retry could pay twice.</dd></div>
+              <div><dt>Fix</dt><dd>Resend with the same UETR, which the network deduplicates. An append-only audit trail and end-of-day reconciliation prove it; 178 tests run in GitHub Actions on every push.</dd></div>
+            </dl>
+            <p class="bp-tech">Python · FastAPI · PostgreSQL · Redis · Docker · Prometheus · Grafana · GitHub Actions</p>
+            <a class="bp-link" href="https://github.com/annastudios/settlement-engine" target="_blank" rel="noopener">View code</a>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -313,6 +335,9 @@
           <span class="pill">Docker</span>
           <span class="pill">Kubernetes</span>
           <span class="pill">CI/CD</span>
+          <span class="pill">GitHub Actions</span>
+          <span class="pill">Prometheus</span>
+          <span class="pill">Grafana</span>
           <span class="pill">Infrastructure as Code</span>
           <span class="pill">Git / GitHub</span>
           <span class="pill">Agile/Scrum</span>
@@ -340,6 +365,7 @@
           <span class="pill">HuggingFace Transformers</span>
           <span class="pill">TensorFlow</span>
           <span class="pill">PostgreSQL</span>
+          <span class="pill">Redis</span>
           <span class="pill">Supabase</span>
           <span class="pill">ChromaDB</span>
         </div>

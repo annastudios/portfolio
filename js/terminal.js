@@ -48,12 +48,12 @@ const commands = {
     printLine('Software engineer. Two years of production APIs and serverless AWS for healthcare at Accenture; lately, full-stack apps and RAG pipelines. Open to SDE roles and freelance work. See <a href="#about">#about</a>.');
   },
   skills() {
-    printLine('Python, REST APIs, FastAPI, AWS Lambda, PostgreSQL, TypeScript, React/Next.js, RAG. Full list: <a href="#skills">#skills</a>.');
+    printLine('Python, REST APIs, FastAPI, AWS Lambda, PostgreSQL, Redis, TypeScript, React/Next.js, RAG. Full list: <a href="#skills">#skills</a>.');
   },
   experience() {
     printLine(
       'Associate Software Engineer, Accenture (Jun 2024 – Jul 2026)\n' +
-      '  • recovered 200K+ failed enrollments, 60% less manual reprocessing\n' +
+      '  • idempotent retry system: recovered 200K+ failed transactions, 60% less manual reprocessing\n' +
       '  • shipped 23 REST APIs on Lambda + API Gateway, 15K peak daily requests\n' +
       '  • cut failure detection from days to minutes with CloudWatch alarms\n' +
       'More: <a href="#experience">#experience</a>'
@@ -62,6 +62,7 @@ const commands = {
   projects() {
     printLine(
       '<a href="https://github.com/annastudios/askive" target="_blank" rel="noopener">askive/</a>      chat with your documents; answers cite their sources\n' +
+      '<a href="https://github.com/annastudios/settlement-engine" target="_blank" rel="noopener">settlement-engine/</a> payments that are never lost or paid twice\n' +
       '<a href="https://github.com/annastudios/lantern-journal" target="_blank" rel="noopener">lantern/</a>     private journal: magic links, RLS, Next.js + Supabase\n' +
       '<a href="https://github.com/annastudios/Algo-Sonic" target="_blank" rel="noopener">algo-sonic/</a>  hear 8 sorting and searching algorithms\n' +
       'Details: <a href="#projects">#projects</a>'

@@ -759,6 +759,14 @@ section h2 {
 .bp-lantern  { grid-column: span 2; background: #b51a2b; }
 .bp-sonic    { background: #3a63c9; }
 .bp-stat     { background: #ffa586; color: #541a2e; justify-content: flex-end; }
+.bp-settlement { grid-column: span 4; background: #123a32; }
+.bp-settlement .bp-tag,
+.bp-settlement .bp-metric-num,
+.bp-settlement .bp-story dt,
+.bp-settlement .bp-link { color: #8fe0bf; }
+
+/* wide card: the number on the left, the story beside it */
+.bp-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 18px 40px; align-items: start; }
 
 .bp-tag {
   align-self: flex-start;
@@ -832,12 +840,13 @@ section h2 {
 
 @media (max-width: 860px) {
   .bento-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
-  .bp-featured, .bp-lantern { grid-column: span 2; grid-row: auto; }
+  .bp-featured, .bp-lantern, .bp-settlement { grid-column: span 2; grid-row: auto; }
+  .bp-split { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 520px) {
   .bento-projects { grid-template-columns: minmax(0, 1fr); }
-  .bp-featured, .bp-lantern { grid-column: auto; }
+  .bp-featured, .bp-lantern, .bp-settlement { grid-column: auto; }
   .bento-project { padding: 22px; }
 }
 
