@@ -1078,7 +1078,7 @@ section h2 {
   .nav-inner { height: auto; padding: 16px 20px; justify-content: space-between; }
   .nav-group { display: none; }
   .nav-toggle { display: flex; }
-  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); text-align: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
   .tech-pills, .hero-actions { justify-content: center; }
   .contact-headline { font-size: 32px; }
