@@ -61,7 +61,7 @@ const commands = {
   },
   projects() {
     printLine(
-      '<a href="https://github.com/annastudios/askive" target="_blank" rel="noopener">askive/</a>      chat with your documents; answers cite their sources\n' +
+      '<a href="https://github.com/annastudios/askive" target="_blank" rel="noopener">askive/</a>      chat with your documents; streamed, cited answers (React + FastAPI)\n' +
       '<a href="https://github.com/annastudios/settlement-engine" target="_blank" rel="noopener">settlement-engine/</a> payments that are never lost or paid twice\n' +
       '<a href="https://github.com/annastudios/lantern-journal" target="_blank" rel="noopener">lantern/</a>     private journal: magic links, RLS, Next.js + Supabase\n' +
       '<a href="https://github.com/annastudios/Algo-Sonic" target="_blank" rel="noopener">algo-sonic/</a>  hear 8 sorting and searching algorithms\n' +
